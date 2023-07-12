@@ -3,10 +3,7 @@ const Database = require('./mysql2');
 if(global.connection && global.connection.state !=='disconected')
   return global.connection;
 
-// get the client
-
-
-// create the connection to database
+// criar conexão com o banco de dados
 const connection = mysql.createConnection({
   host: 'sql304.infinityfree.com',
   port:'3306',
@@ -15,13 +12,12 @@ const connection = mysql.createConnection({
   database: 'if0_34596283_bancotarefas'
 });
 
-// execute will internally call prepare and query
 connection.execute(
-  'SELECT * FROM `table` WHERE `name` = ? AND `age` > ?',
-  ['Rick C-137', 53],
+  'SELECT * FROM `table` WHERE `tarefa` = ? AND `age` > ?',
+
   function(err, results, fields) {
-    console.log(results); // results contains rows returned by server
-    console.log(fields); // fields contains extra meta data about results, if available
+    console.log(results); 
+    console.log(fields); 
 
   }
 );

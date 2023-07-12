@@ -8,7 +8,7 @@ class Tarefa {
   }
 
   static async listarTarefas() {
-    let tarefas = await db.query('SELECT * FROM lista');
+    let tarefas = await db.query('SELECT * FROM tarefa');
     return tarefas;
   }
 
@@ -17,6 +17,10 @@ class Tarefa {
     return resp;
   }
 }
+    app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
+  });
+  
 
 module.exports = Tarefa;
 

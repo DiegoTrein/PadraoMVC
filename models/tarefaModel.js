@@ -1,4 +1,4 @@
-  const db = require('./database');
+  const db = require('./mysql');
 
 class Tarefa {
   constructor(id, title, description) {
@@ -17,10 +17,7 @@ class Tarefa {
     return resp;
   }
 }
-    app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
-  });
-  
+    
 
 module.exports = Tarefa;
 
